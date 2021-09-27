@@ -33,9 +33,9 @@ export default function App() {
             parseFloat(rates[index]);
         tempData.push({
           base: index,
-          exchange_rates: rates[index].toFixed(4),
-          sell_rates: sellRates.toFixed(4),
-          buy_rates: buyRates.toFixed(4),
+          exRates_: rates[index].toFixed(4),
+          sellRates_: sellRates.toFixed(4),
+          buyRates_: buyRates.toFixed(4),
         });
       }
       setDatas(tempData);
@@ -59,12 +59,12 @@ export default function App() {
             </tr>
           </thead>
           <tbody>
-            {datas.map((item, index) => (
+            {datas.map((column, index) => (
               <tr key={index}>
-                <td>{item.base}</td>
-                <td>{item.buy_rates}</td>
-                <td>{item.exchange_rates}</td>
-                <td>{item.sell_rates}</td>
+                <td>{column.base}</td>
+                <td>{column.buyRates_}</td>
+                <td>{column.exRates_}</td>
+                <td>{column.sellRates_}</td>
               </tr>
             ))}
           </tbody>
